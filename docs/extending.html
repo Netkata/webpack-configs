@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Extending this package | Netkata Webpack Config</title>
+    <meta name="description" content="Netkata Webpack Config">
+    
+    
+    <link rel="preload" href="/assets/css/0.styles.a932b7f9.css" as="style"><link rel="preload" href="/assets/js/app.2f1da412.js" as="script"><link rel="preload" href="/assets/js/4.c46f6c93.js" as="script"><link rel="prefetch" href="/assets/js/2.0576465f.js"><link rel="prefetch" href="/assets/js/3.4ee0c772.js"><link rel="prefetch" href="/assets/js/5.55a14d77.js"><link rel="prefetch" href="/assets/js/6.335115d5.js"><link rel="prefetch" href="/assets/js/7.5f68da23.js"><link rel="prefetch" href="/assets/js/8.2e21680e.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.a932b7f9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Netkata Webpack Config</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/netkata/webpack" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="https://github.com/netkata/webpack" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Home</a></li><li><div class="sidebar-group"><p class="sidebar-heading open"><span>Documentation</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/docs/styles.html" class="sidebar-link">Styles</a></li><li><a href="/docs/icons.html" class="sidebar-link">Icons</a></li><li><a href="/docs/utils.html" class="sidebar-link">Utils</a></li><li><a href="/docs/extending.html" class="active sidebar-link">Extending this package</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="extending-this-package"><a href="#extending-this-package" aria-hidden="true" class="header-anchor">#</a> Extending this package</h1> <p>By using <code>webpack-merge</code> at it's core, this package allows to extend and
+overwrite generated config. Internal configuration is passed by <code>features</code>
+property, but any other options you pass will be applied on top of features you
+enabled.</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> <span class="token punctuation">{</span> config <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@netkata/webpack-configs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token function">config</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  features<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    styles<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      extractToFile<span class="token punctuation">:</span> <span class="token boolean">true</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token comment">// you can place any valid webpack config here</span>
+  entry<span class="token punctuation">:</span> <span class="token string">'./src'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><p><code>webpack-merge</code> is also smart enough to override loaders based on file match
+pattern, so if you specify loader for <code>/\.js$/</code> it will replace default
+<code>babel-loader</code>.</p> <p><a href="https://github.com/survivejs/webpack-merge" target="_blank" rel="noopener noreferrer">View docs<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> for learning more about
+<code>webpack-merge</code>.</p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/docs/utils.html" class="prev">
+          Utils
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.2f1da412.js" defer></script><script src="/assets/js/4.c46f6c93.js" defer></script>
+  </body>
+</html>
