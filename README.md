@@ -1,5 +1,7 @@
 # webpack-configs
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Netkata/webpack-configs.svg)](https://greenkeeper.io/)
+
 A single dependency for ~~all~~ most of your Webpack needs, yet still
 extendable.
 
