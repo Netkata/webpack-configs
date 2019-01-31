@@ -2,6 +2,7 @@ module.exports = {
   title: 'Netkata Webpack Config',
   description: 'Netkata Webpack Config',
   dest: 'docs/dist',
+  base: '/webpack-configs/',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
