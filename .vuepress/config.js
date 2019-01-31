@@ -6,7 +6,7 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'GitHub', link: 'https://github.com/netkata/webpack' },
+      { text: 'GitHub', link: 'https://github.com/netkata/webpack-configs' },
     ],
     sidebar: [
       ['/', 'Home'],
