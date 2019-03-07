@@ -1591,10 +1591,10 @@
   dependencies:
     source-map "^0.6.1"
 
-"@types/webpack-dev-server@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.1.1.tgz#12ae26194b3e1b8a317559592659921f282583c2"
-  integrity sha512-TnEQPT+OZjWV2kRyNs0RPMDQmBCiLrr/ZhKSgFNF6aM4O/moUAfo2Yu3MIMUjoi3aE/02RH1iVR+Y6mWmXOlVA==
+"@types/webpack-dev-server@^3.1.3":
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.1.3.tgz#77f823347941dbc8c2bbdad3f90867cbb18af48d"
+  integrity sha512-UfCR/APPg3SsEnsrj0AOYxJ7qleEIfwijqln/Oj6lYFYKxPoBcvqEZdwJBU79fuCIL/VpGjRK5G+/40mCaOi2A==
   dependencies:
     "@types/express" "*"
     "@types/http-proxy-middleware" "*"
