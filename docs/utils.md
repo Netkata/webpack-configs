@@ -8,7 +8,11 @@ To configure them, you can pass these options in your `webpack.config.js`:
 ```typescript
 features: {
   styles: {
-    browserSync?: boolean;
+    browserSync?: {
+      proxy: string;
+      host?: string;
+      port?: number;
+    };
     jquery?: 'internal' | 'external';
   }
 }
@@ -40,7 +44,7 @@ done by `external` option here.
 
 ::: warning
 
-When using this option, please make sure that jQuery is loaded before webpack in
-HTML.
+When using this option, please make sure that jQuery is loaded before
+webpack-generated assets in HTML.
 
 :::

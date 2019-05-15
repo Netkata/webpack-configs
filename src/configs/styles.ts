@@ -1,5 +1,6 @@
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import * as magicImporter from 'node-sass-magic-importer';
+import * as FixStyleOnlyEntriesPlugin from 'webpack-fix-style-only-entries';
 
 import { IConfiguration, WebpackMode } from '../defaultOptions';
 
@@ -19,26 +20,26 @@ export function styles({ styles: stylesConfig }: IConfiguration, mode: WebpackMo
 
   const fileRegex = stylesConfig.scss ? /\.(sa|sc|c)ss$/ : /\.css$/;
   const loaders = [
-    stylesConfig.extractToFile && mode === 'production'
-        ? MiniCssExtractPlugin.loader
-        : 'style-loader',
+    stylesConfig.extractToFile
+      ? MiniCssExtractPlugin.loader
+      : 'style-loader',
 
     'css-loader',
     'resolve-url-loader',
   ];
   const plugins = [];
 
+  plugins.push(new FixStyleOnlyEntriesPlugin());
+
   if (stylesConfig.scss) {
     loaders.push(sassLoader);
   }
 
   if (stylesConfig.extractToFile) {
-    plugins.push(
-            new MiniCssExtractPlugin({
-              filename: '[name].css',
-              chunkFilename: '[id].css',
-            }),
-        );
+    plugins.push(new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }));
   }
 
   return {

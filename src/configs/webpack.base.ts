@@ -7,7 +7,11 @@ const baseConfig = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: [['@babel/preset-env', { modules: false, useBuiltIns: 'usage' }]],
+            presets: [['@babel/preset-env', {
+              modules: false,
+              useBuiltIns: 'usage',
+              corejs: 2,
+            }]],
           },
         },
       },

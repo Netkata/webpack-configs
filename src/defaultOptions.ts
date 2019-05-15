@@ -22,7 +22,5 @@ export const defaultOptions: IConfiguration = {
     extractToFile: true,
     scss: true,
   },
-  utils: {
-    browserSync: false,
-  },
+  utils: {},
 };

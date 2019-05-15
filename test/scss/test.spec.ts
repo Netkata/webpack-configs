@@ -18,44 +18,32 @@ it('should compile scss', async () => {
       },
     },
     'development',
-    );
+  );
   const output = stats.toJson();
 
   expect(output.assets.length).toBe(1);
+  expect(output.assets[0].name).toBe('main.js');
 });
 
-it('should not compile external scss on development', async () => {
-  const statsDevelopment = await compiler(
-    {
-      ...baseConfig,
-      features: {
-        styles: {
-          scss: true,
-          extractToFile: true,
-        },
+it('should extract scss', async () => {
+  const options =  {
+    ...baseConfig,
+    features: {
+      styles: {
+        scss: true,
+        extractToFile: true,
       },
     },
-    'development',
-    );
-  const output = statsDevelopment.toJson();
+  };
+  const productionStats = (await compiler(options, 'production')).toJson();
 
-  expect(output.assets.length).toBe(1);
-});
+  expect(productionStats.assets.length).toBe(2);
+  expect(productionStats.assets[0].name).toBe('main.css');
+  expect(productionStats.assets[1].name).toBe('main.js');
 
-it('should compile external scss on production', async () => {
-  const stats = await compiler(
-    {
-      ...baseConfig,
-      features: {
-        styles: {
-          scss: true,
-          extractToFile: true,
-        },
-      },
-    },
-    'production',
-    );
-  const output = stats.toJson();
+  const developmentStats = (await compiler(options, 'development')).toJson();
 
-  expect(output.assets.length).toBe(2);
+  expect(developmentStats.assets.length).toBe(2);
+  expect(developmentStats.assets[0].name).toBe('main.css');
+  expect(developmentStats.assets[1].name).toBe('main.js');
 });

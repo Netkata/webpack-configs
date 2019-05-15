@@ -11,9 +11,9 @@ declare module 'browser-sync-webpack-plugin' {
     }
     namespace BrowserSyncPlugin {
         interface IBrowserSyncOptions {
-          host: string;
-          port: number;
           proxy: string;
+          host?: string;
+          port?: number;
         }
 
         interface IBrowserSyncPluginOptions {

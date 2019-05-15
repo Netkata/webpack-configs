@@ -3,14 +3,14 @@ import { Configuration as WebpackConfiguration, ProvidePlugin } from 'webpack';
 import { IConfiguration } from '../defaultOptions';
 
 export interface IUtilOptions {
-  browserSync?: boolean;
+  browserSync?: BrowserSyncPlugin.IBrowserSyncOptions;
   jquery?: 'internal' | 'external';
 }
 
 function validateConfig(config: IUtilOptions) {
   if (config.browserSync !== undefined) {
-    if (typeof config.browserSync !== 'boolean') {
-      throw new Error('Invalid option for browserSync, boolean should be passed.');
+    if (typeof config.browserSync !== 'object') {
+      throw new Error('Invalid option for browserSync, object should be passed.');
     }
   }
 
@@ -29,18 +29,9 @@ export function utils({ utils: utilsConfig }: IConfiguration) {
   if (utilsConfig.browserSync) {
     config.plugins = config.plugins || [];
 
-    config.plugins.push(
-            new BrowserSyncPlugin(
-              {
-                host: 'localhost',
-                port: 3000,
-                proxy: 'http://localhost:3100/',
-              },
-              {
-                reload: false,
-              },
-            ),
-        );
+    config.plugins.push(new BrowserSyncPlugin(utilsConfig.browserSync, {
+      reload: false,
+    }));
   }
 
   if (utilsConfig.jquery === 'external') {
