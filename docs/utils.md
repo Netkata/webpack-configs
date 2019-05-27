@@ -30,8 +30,9 @@ BrowserSync seems to get around it by overriding paths in every HTML generated
 by proxied site.
 
 In this package, we use `browser-sync-webpack-plugin` to create BrowserSync
-instance which proxies our `webpack-dev-server`, which in turn proxies our
-WordPress site. Pretty complicated, but works! :tada:
+instance which proxies our WordPress site. Pretty complicated, but works! :tada:
+
+You can read more [here](wordpress.md).
 
 ## Difference between internal or external jQuery
 

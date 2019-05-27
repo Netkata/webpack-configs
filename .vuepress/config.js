@@ -17,6 +17,7 @@ module.exports = {
           '/docs/styles.md',
           '/docs/icons.md',
           '/docs/utils.md',
+          '/docs/wordpress.md',
           '/docs/extending.md',
         ]
       }
