@@ -21,7 +21,7 @@
     "core-js": "^2.6.3",
     "cross-spawn": "^6.0.5",
     "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
+    "file-loader": "^4.1.0",
     "iconfont-plugin-webpack": "^1.1.2",
     "image-webpack-loader": "^5.0.0",
     "lodash-es": "^4.17.11",
